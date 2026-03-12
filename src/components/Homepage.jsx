@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import tmdb from '../api/tmdb'; 
+import tmdb from '../api/tmdb';
 import { getSuggestedMovies } from "../api/movies";
 import MovieCard from '../components/Moviecard';
 import { useWatchlist } from "../context/WatchlistContext";
@@ -39,7 +39,6 @@ const Homepage = () => {
         setLoading(true);
         setErr("");
 
-        // ✅ Trending movies via tmdb instance
         const { data } = await tmdb.get("/discover/movie", {
           params: {
             with_watch_providers: "8",      
